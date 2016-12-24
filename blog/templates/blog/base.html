@@ -2,19 +2,37 @@
 <html>
     <head>
         <title>TeraML</title>
+        <meta charset="utf-8">
+        <meta name="description" content="TeraML">
+        <meta name="keywords" contents="TeraML">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
 
     <body>
+
     <div class="page-header">
+        <img src="{% static 'image/TeraML.png' %}" height="75px" >
+        <span id="TML">TeraML_Laboratory</span>
         {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+           <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> 
         {% endif %}
-        <h1><a href="/">TeraML</a></h1>
     </div>
+
+    <nav>
+        <ul class="topnav" id="myTopnav">
+            <li><a href="../../../">All</a></li>
+            <li><a href="{% url 'order_content' %}">Content</a></li>
+            <li><a href="{% url 'order_workspace' %}">Work space</a></li>
+            <li><a href="{% url 'about' %}">About me</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
